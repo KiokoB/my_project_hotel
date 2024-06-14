@@ -37,7 +37,7 @@ The Hotel Reservation System is a command-line interface (CLI) application built
   - View all clients
   - Be assigned duties
 
-- **Hotel Administrator:**
+- **Hotel Administration:**
   - Manage employees
   - View all clients 
 

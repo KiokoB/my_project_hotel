@@ -4,9 +4,69 @@ from models.client import Client
 from models.employee import Employee
 
 
+def enter_program():
+    print("Hello user, please input your name and password.")
+    name = input("Enter your name here: ")
+    password = input("Enter your password: ")
+    print(f"Welcome {name} to our hotel program!")
+
 def exit_program():
     print("Thank you for using our system.Goodbye!")
     exit()
+
+#Hotel data
+def list_hotels():
+    hotels = Hotel.get_all()
+    for hotel in hotels:
+        print(hotel)
+
+def find_hotel_by_name():
+    name = input("Enter the hotel's name: ")
+    hotel = Hotel.find_by_name(name)
+    print(hotel) if hotel else print(
+        f'Hotel {name} not found')
+    
+def find_hotel_by_id():
+    id_ = input("Enter the hotel's id: ")
+    hotel = Hotel.find_by_id(id_)
+    print(hotel) if hotel else print(f'Hotel {id_} not found')
+
+def create_hotel():
+    name = input("Enter the hotel's name: ")
+    location = input("Enter the hotel's address: ")
+    contact = input("Enter the hotel's contact: ")
+    try:
+        hotel = Hotel.create(name, location, contact)
+        print(f'Successfully added: {hotel}')
+    except Exception as exc:
+        print("Error creating hotel: ", exc)
+
+def update_hotel():
+    id_ = input("Enter the hotel's id: ")
+    if hotel := Hotel.find_by_id(id_):
+        try:
+            name = input("Enter the hotel's new name: ")
+            hotel.name = name
+            location = input("Enter the new hotel's location: ")
+            hotel.location = location
+            contact = input("Enter the hotel's new contact: ")
+            hotel.contact = contact
+
+            hotel.update()
+            print(f'Successfully updated: {hotel}')
+        except Exception as exc:
+            print("Error updating hotel: ", exc)
+    else:
+        print(f'Hotel {id_} not found')
+
+def delete_hotel():
+    id_ = input("Enter the hotel's id: ")
+    if hotel := Hotel.find_by_id(id_):
+        hotel.delete()
+        print(f'Hotel {id_} deleted')
+    else:
+        print(f'Hotel {id_} not found')
+
 
 #Clients data
 def create_client():
@@ -64,6 +124,14 @@ def delete_client():
     else:
         print(f'Client {id_} not found')
 
+def list_hotel_clients():
+    id_ = input("Enter the hotel's id: ")
+    if hotel := Hotel.find_by_id(id_):
+        for client in hotel.clients():
+            print(client)
+    else:
+        print(f'Hotel {id_} not found')
+
 #Employees data
 def list_employees():
     employees = Employee.get_all()
@@ -117,56 +185,10 @@ def delete_employee():
     else:
         print(f'Employee {id_} not found')
 
-
-#Hotel data
-def list_hotels():
-    hotels = Hotel.get_all()
-    for hotel in hotels:
-        print(hotel)
-
-def find_hotel_by_name():
-    name = input("Enter the hotel's name: ")
-    hotel = Hotel.find_by_name(name)
-    print(hotel) if hotel else print(
-        f'Hotel {name} not found')
-    
-def find_hotel_by_id():
-    id_ = input("Enter the hotel's id: ")
-    hotel = Hotel.find_by_id(id_)
-    print(hotel) if hotel else print(f'Hotel {id_} not found')
-
-def create_hotel():
-    name = input("Enter the hotel's name: ")
-    location = input("Enter the hotel's address: ")
-    contact = input("Enter the hotel's contact: ")
-    try:
-        hotel = Hotel.create(name, location, contact)
-        print(f'Successfully added: {hotel}')
-    except Exception as exc:
-        print("Error creating hotel: ", exc)
-
-def update_hotel():
+def list_hotel_employees():
     id_ = input("Enter the hotel's id: ")
     if hotel := Hotel.find_by_id(id_):
-        try:
-            name = input("Enter the hotel's new name: ")
-            hotel.name = name
-            location = input("Enter the new hotel's location: ")
-            hotel.location = location
-            contact = input("Enter the hotel's new contact: ")
-            hotel.contact = contact
-
-            hotel.update()
-            print(f'Successfully updated: {hotel}')
-        except Exception as exc:
-            print("Error updating hotel: ", exc)
-    else:
-        print(f'Hotel {id_} not found')
-
-def delete_hotel():
-    id_ = input("Enter the hotel's id: ")
-    if hotel := Hotel.find_by_id(id_):
-        hotel.delete()
-        print(f'Hotel {id_} deleted')
+        for employee in hotel.employees():
+            print(employee)
     else:
         print(f'Hotel {id_} not found')

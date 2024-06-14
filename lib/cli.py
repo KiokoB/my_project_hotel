@@ -2,6 +2,7 @@
 # lib/cli.py
 
 from helpers import (
+    enter_program,
     exit_program,
     create_client,
     list_clients,
@@ -9,12 +10,14 @@ from helpers import (
     find_client_by_id,
     update_client,
     delete_client,
+    list_hotel_clients,
     list_employees,
     find_employee_by_name,
     find_employee_by_id,
     create_employee,
     update_employee,
     delete_employee,
+    list_hotel_employees,
     list_hotels,
     find_hotel_by_name,
     find_hotel_by_id,
@@ -26,6 +29,7 @@ from helpers import (
 
 
 def main():
+    enter_program()
     while True:
         menu()
         choice = input("> ")
@@ -44,28 +48,32 @@ def main():
         elif choice == "6":
             delete_client()
         elif choice == "7":
-            list_employees()
+            list_hotel_clients()
         elif choice == "8":
-            find_employee_by_name()
+            list_employees()
         elif choice == "9":
-            find_employee_by_id()
+            find_employee_by_name()
         elif choice == "10":
-            create_employee()
+            find_employee_by_id()
         elif choice == "11":
-            update_employee()
+            create_employee()
         elif choice == "12":
-            delete_employee()
+            update_employee()
         elif choice == "13":
-            list_hotels()
+            delete_employee()
         elif choice == "14":
-            find_hotel_by_name()
+            list_hotel_employees()
         elif choice == "15":
-            find_hotel_by_id()
+            list_hotels()
         elif choice == "16":
-            create_hotel()
+            find_hotel_by_name()
         elif choice == "17":
-            update_hotel()
+            find_hotel_by_id()
         elif choice == "18":
+            create_hotel()
+        elif choice == "19":
+            update_hotel()
+        elif choice == "20":
             delete_hotel()
         else:
             print("Invalid choice")
@@ -80,18 +88,21 @@ def menu():
     print("4. Find existing client by id")
     print("5. Update existing client's details")
     print("6. Delete a client")
-    print("7. List all employees")
-    print("8. Find employee by name")
-    print("9. Find employee by id")
-    print("10. Create a new employee")
-    print("11. Update existing employee's details")
-    print("12. Delete an employee")
-    print("13. List all hotels")
-    print("14. Find hotel by name")
-    print("15. Find hotel by id")
-    print("16. Create a new hotel")
-    print("17. Update an existing hotel")
-    print("18. Delete a hotel")
+    print("7. List clients in a hotel")
+    print("8. List all employees")
+    print("9. Find employee by name")
+    print("10. Find employee by id")
+    print("11. Create a new employee")
+    print("12. Update existing employee's details")
+    print("13. Delete an employee")
+    print("14. List employees in a hotel")
+    print("15. List all hotels")
+    print("16. Find hotel by name")
+    print("17. Find hotel by id")
+    print("18. Create a new hotel")
+    print("19. Update an existing hotel")
+    print("20. Delete a hotel")
+    
 
 
 

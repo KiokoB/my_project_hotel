@@ -52,7 +52,7 @@ class Client:
 
     @hotel_id.setter
     def hotel_id(self, hotel_id):
-        if type(hotel_id) is int and Hotel.find_by_id(hotel_id):
+        if Hotel.find_by_id(hotel_id):
             self._hotel_id = hotel_id
         else:
             raise ValueError(

@@ -151,7 +151,7 @@ def find_employee_by_id():
 
 def create_employee():
     name = input("Enter the employee's name: ")
-    duty_assigned = input("Enter the employee's address: ")
+    duty_assigned = input("Enter the employee's duty: ")
     hotel_id = input("Enter the employee's hotel id: ")
     try:
         employee = Employee.create(name, duty_assigned, hotel_id)

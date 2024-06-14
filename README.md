@@ -30,24 +30,28 @@ The Hotel Reservation System is a command-line interface (CLI) application built
 ## Features
 
 - **Client:** 
-  - Search for available rooms
-  - 
+  - See a list of available hotels
+  - View employees available
 
 - **Employee:**
-  - Add new rooms
-  - Update room details
-  - View all reservations
-  - Manage client reservations
+  - View all clients
+  - Be assigned duties
 
 - **Hotel Administrator:**
   - Manage employees
   - View all clients 
 
 - **General:**
-  - CRUD operations for reservations, clients, and employees
+  - CRUD operations for hotels, clients, and employees
   - ORM integration for seamless database management
+
+## Usage
+- To start the apllication, run:
+    ```bash
+    ./lib/cli.py
 
 
 ## Resources
 
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+- [https://moringa.instructure.com/courses/703/pages/phase-3-cli+orm-project-template]
+- [https://docs.python.org/3/]

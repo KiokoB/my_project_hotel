@@ -1,9 +1,14 @@
 # lib/helpers.py
-
-def helper_1():
-    print("Performing useful function#1.")
+from models.hotel import Hotel
+from models.client import Client
+from models.employee import Employee
 
 
 def exit_program():
-    print("Goodbye!")
+    print("Thank you for using our system.Goodbye!")
     exit()
+
+# def list_hotels():
+#     hotels = Hotel.get_all()
+#     for hotel in hotels:
+#         print(hotel)

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # lib/cli.py
 
+import colorama
+from colorama import Back, Fore, Style
+colorama.init(autoreset=True)
 from helpers import (
     enter_program,
     exit_program,
@@ -80,28 +83,28 @@ def main():
 
 
 def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Create new client")
-    print("2. List existing clients")
-    print("3. Find existing client by name")
-    print("4. Find existing client by id")
-    print("5. Update existing client's details")
-    print("6. Delete a client")
-    print("7. List clients in a hotel")
-    print("8. List all employees")
-    print("9. Find employee by name")
-    print("10. Find employee by id")
-    print("11. Create a new employee")
-    print("12. Update existing employee's details")
-    print("13. Delete an employee")
-    print("14. List employees in a hotel")
-    print("15. List all hotels")
-    print("16. Find hotel by name")
-    print("17. Find hotel by id")
-    print("18. Create a new hotel")
-    print("19. Update an existing hotel")
-    print("20. Delete a hotel")
+    print(Fore.BLUE + "Please select an option:")
+    print(Fore.LIGHTCYAN_EX + "0. Exit the program")
+    print(Fore.LIGHTCYAN_EX + "1. Create new client")
+    print(Fore.LIGHTCYAN_EX + "2. List existing clients")
+    print(Fore.LIGHTCYAN_EX + "3. Find existing client by name")
+    print(Fore.LIGHTCYAN_EX + "4. Find existing client by id")
+    print(Fore.LIGHTCYAN_EX + "5. Update existing client's details")
+    print(Fore.LIGHTCYAN_EX + "6. Delete a client")
+    print(Fore.LIGHTCYAN_EX + "7. List clients in a hotel")
+    print(Fore.LIGHTCYAN_EX + "8. List all employees")
+    print(Fore.LIGHTCYAN_EX + "9. Find employee by name")
+    print(Fore.LIGHTCYAN_EX + "10. Find employee by id")
+    print(Fore.LIGHTCYAN_EX + "11. Create a new employee")
+    print(Fore.LIGHTCYAN_EX + "12. Update existing employee's details")
+    print(Fore.LIGHTCYAN_EX + "13. Delete an employee")
+    print(Fore.LIGHTCYAN_EX + "14. List employees in a hotel")
+    print(Fore.LIGHTCYAN_EX + "15. List all hotels")
+    print(Fore.LIGHTCYAN_EX + "16. Find hotel by name")
+    print(Fore.LIGHTCYAN_EX + "17. Find hotel by id")
+    print(Fore.LIGHTCYAN_EX + "18. Create a new hotel")
+    print(Fore.LIGHTCYAN_EX + "19. Update an existing hotel")
+    print(Fore.LIGHTCYAN_EX + "20. Delete a hotel")
     
 
 

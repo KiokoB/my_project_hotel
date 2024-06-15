@@ -19,7 +19,7 @@ The Hotel Reservation System is a command-line interface (CLI) application built
     ```
 3. **Install dependencies:**
     ```bash
-    pip install <dependencies>
+    pip install colorama
     ```
 4. **Accessing the database:**
     You can install SQLite Viewer as an extension in VSCode using the link provided below:

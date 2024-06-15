@@ -3,15 +3,19 @@ from models.hotel import Hotel
 from models.client import Client
 from models.employee import Employee
 
+import colorama
+from colorama import Back, Fore, Style
+colorama.init(autoreset=True)
+
 
 def enter_program():
-    print("Hello user, please input your name and password.")
-    name = input("Enter your name here: ")
-    password = input("Enter your password: ")
-    print(f"Welcome {name} to our hotel program!")
+    print(Back.MAGENTA + Fore.BLACK +"Hello user, please input your name and password.")
+    name = input(Fore.BLUE + "Enter your name here: ")
+    password = input(Fore.BLUE + "Enter your password: ")
+    print(Back.MAGENTA + Fore.BLACK + f"Welcome {name} to our hotel program!")
 
 def exit_program():
-    print("Thank you for using our system.Goodbye!")
+    print(Fore.BLUE + "Thank you for using our system.Goodbye!")
     exit()
 
 #Hotel data

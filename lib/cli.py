@@ -79,7 +79,7 @@ def main():
         elif choice == "20":
             delete_hotel()
         else:
-            print("Invalid choice")
+            print(Fore.RED + "Invalid choice")
 
 
 def menu():
